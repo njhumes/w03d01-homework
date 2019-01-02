@@ -1,0 +1,51 @@
+div{
+    margin: 20px;
+    position: relative;
+    vertical-align: top;
+}
+p {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 15px;
+}
+
+.game-levels, .game-display{
+    display: inline-block
+}
+
+.game-levels {
+    /* border: 2px solid green; */
+    width: 250px;
+    height: 400px;
+}
+
+.game-display {
+    /* border: 5px solid black; */
+    width: 500px;
+    height: 400px;
+}
+
+.game-buttons {
+    /* border: 5px solid blue; */
+    width: 400px;
+    height: 100px;
+    margin: auto;
+}
+img {
+    height: 70%;
+    width: 70%;
+}
+.bg {
+    position: relative;
+}
