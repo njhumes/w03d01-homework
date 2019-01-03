@@ -14,9 +14,9 @@ p {
     width: 100%;
 }
 button {
-    background-color: #4CAF50; /* Green */
+    background-color: #FFD90F; 
     border: none;
-    color: white;
+    color: black;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -33,12 +33,14 @@ button {
     /* border: 2px solid green; */
     width: 250px;
     height: 400px;
+    margin-top: 100px;
 }
 
 .game-display {
     /* border: 5px solid black; */
     width: 500px;
     height: 400px;
+    margin: 50px;
 }
 
 .game-buttons {
@@ -60,3 +62,22 @@ button {
     left: 100px;
     position: absolute;
 }
+#feed, #play, #rest {
+    margin: 0 10px 10px 10px;
+    font-weight: bold;
+}
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+/* #feed{ */
+    /* background-color: #F14E28;
+}
+#play{
+    background-color: #FFD90F;
+}
+#rest{
+    background-color: #11bb66; */
+/* } */
