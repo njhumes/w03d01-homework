@@ -1,5 +1,6 @@
 body{
-    margin: auto;
+    margin: 0;
+    padding: 0;
     background-image: url("../images/clouds.jpg");
 }
 div{
@@ -7,11 +8,40 @@ div{
     position: relative;
     vertical-align: top;
 }
-p {
+#home{
+    display: inline;
+    position: relative;
+    left: 50px;
+    
+}
+#x {
+    position: relative;
+    height: 10%;
+    width: 10%;
+}
+h2 {
+    display: inline;
+    position: relative;
+    left: 50px;
+    top: 20px;
+    font-weight: bold;
+    font-family: monospace;
+}
+.tamagotchi-name {
+    position: relative;
+    left: 25px;
+    padding-bottom: 15px;
+    color: #F65132;
+    font-weight: bold;
+}
+#restart {
+    position: relative;
+}
+/* p {
     position: relative;
     text-align: center;
     width: 100%;
-}
+} */
 button {
     background-color: #FFD90F; 
     border: none;
@@ -25,7 +55,7 @@ button {
 }
 
 .game-levels, .game-display{
-    display: inline-block
+    display: inline-block;
 }
 
 .game-levels {
@@ -33,6 +63,8 @@ button {
     width: 250px;
     height: 400px;
     margin-top: 100px;
+    position: relative;
+    top: 60px;
 }
 
 .game-display {

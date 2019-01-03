@@ -15,22 +15,30 @@ class Pet {
         if(this.hunger < 0){
             this.hunger = 0;
         }
-        console.log(typeof this.hunger);
         $('#hunger-level').text(`Hunger: ${this.hunger}/10`);
-        console.log(this.hunger)
         $('.gif').remove()
-        $('.game-display').append('<img class="gif" src="https://i.pinimg.com/originals/b5/49/c5/b549c552687942777915f92519d5054c.gif">')
-    }
+        if(this.age < 3){
+            $('.game-display').append('<img class="gif" src="https://i.pinimg.com/originals/b5/49/c5/b549c552687942777915f92519d5054c.gif">')
+        } else{
+            $('.game-display').append('<img class="gif" src="images/donut3.png">')
+            // $('.gif').fadeOut('slow')
+            $('.gif').velocity('transition.fadeOut', {
+                duration: 2000,
+            })
+        }
+    }   
     play(){
         this.boredom -= 4;
         if (this.boredom < 0) {
             this.boredom = 0;
         }
         $('#boredom-level').text(`Boredom: ${this.boredom}/10`);
-        console.log(this.boredom)
-        console.log(typeof this.boredom)
         $('.gif').remove()
-        $('.game-display').append('<img class="gif" src="https://i.gifer.com/origin/7d/7d6dd7aee61f0eae8caa330e54226a67_w200.gif">')
+        if(this.age < 3){
+            $('.game-display').append('<img class="gif" src="https://i.gifer.com/origin/7d/7d6dd7aee61f0eae8caa330e54226a67_w200.gif">')
+        } else {
+            $('.game-display').append('<img class="gif" src="images/bartman.gif">')
+        }
         $('.gif').velocity({
             translateX: 50,
         },  {
@@ -51,14 +59,29 @@ class Pet {
         }
         $('#sleep-level').text(`Sleepiness: ${this.sleepiness}/10`);
         $('.gif').remove()
-        $('.game-display').append('<img class="gif" src="https://i.pinimg.com/originals/20/7c/c5/207cc5f45d654c2b1f655b0bf1820bea.gif">')
+        if(this.age < 3) {
+            $('.game-display').append('<img class="gif" src="https://i.pinimg.com/originals/20/7c/c5/207cc5f45d654c2b1f655b0bf1820bea.gif">')
+        } else {
+            $('.game-display').append('<img class="gif" src="images/bartmanplay.png">')
+        }
+        
     }
 }
 
-const bart = new Pet('bart');
+// 
+// allow user to enter name
+// const username = prompt('What is your Tamagotchi\'s name?');
+let username;
+// const bart = new Pet(username);
+let bart;
+
 
 
 function makeGame(){
+    username = prompt('What is your Tamagotchi\'s name?');
+    bart = new Pet(username);
+    $('.start-button').hide();
+    $('.logos').remove();
     $('.game-levels').append(`<p id="hunger-level">Hunger: ${bart.hunger}/10</p>`);
     $('.game-levels').append(`<p id="boredom-level">Boredom: ${bart.boredom}/10</p>`);
     $('.game-levels').append(`<p id="sleep-level">Sleepiness: ${bart.sleepiness}/10</p>`);
@@ -68,14 +91,12 @@ function makeGame(){
     $('.game-buttons').append(`<button class='btn-lg' id="rest">Rest</button>`);
     $('.game-display').append('<img class="bg" src="images/tv.png">')
     $('.game-display').append('<img class="gif" src="https://i.gifer.com/origin/7d/7d6dd7aee61f0eae8caa330e54226a67_w200.gif">')
-    $('.start-button').hide();
-    // timeRunning;
+    $('.game-levels').prepend(`<h1 class="tamagotchi-name">${username}</h1>`);
     let timeRunning = setInterval(increaseTime, 1000);
     function increaseTime() {
         game.time += 1;
         increaseLevels();
         gameOver();
-        // transition();
         // evolve();
     }
     function gameOver() {
@@ -124,20 +145,14 @@ function makeGame(){
             $('#age-level').text(`Age: ${bart.age}`);
         }
     }
+    // function evolve() {
+    //     if (bart.age > 1) {
+    //         alert('Bart is evolving!')
+    //         // $('.gif').remove();
+    //         // $('.game-display').append('<img class="gif" src="images/bartman.gif">');
+    //     }
+    // }
 }
-
-// function transition(){
-//     if(bart.age > 1){
-//         $('.gif').remove()
-//         $('.game-display').append('<img class="gif" src="images/transition.gif">')
-//         }
-//     }
-// function evolve(){
-//     if(bart.age > 2){
-//         $('.gif').remove()
-//         $('.game-display').append('<img class="gif" src="images/bartman.gif">')
-//     }
-// }
 // Start game when the button is clicked
 $('.start-button').click(makeGame);
 
