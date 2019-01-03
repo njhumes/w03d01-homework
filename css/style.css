@@ -1,3 +1,8 @@
+body{
+    margin: auto;
+    background-image: url('http://vignette1.wikia.nocookie.net/desperate/images/f/fc/Simpsons_clouds.jpg/revision/latest?cb=20101107201437');
+    /* background-size: 95%; */
+}
 div{
     margin: 20px;
     position: relative;
@@ -42,10 +47,16 @@ button {
     height: 100px;
     margin: auto;
 }
-img {
-    height: 70%;
-    width: 70%;
-}
+
 .bg {
+    height: 90%;
+    width: 90%;
     position: relative;
+}
+.gif {
+    height: 40%;
+    width: 40%;
+    top: 100px;
+    left: 100px;
+    position: absolute;
 }
