@@ -1,3 +1,4 @@
+
 const game = {
     time: 0,
 }
@@ -6,7 +7,7 @@ class Pet {
         this.name = name;
         this.hunger = 3;
         this.boredom = 2;
-        this.sleepiness = 4;
+        this.sleepiness = 2;
         this.age = 1;
     }
     feed(){
@@ -110,7 +111,7 @@ function makeGame(){
             }
             if(bart.age > 3){
                 $('.gif').remove()
-                $('.game-display').append('<img class="gif" src="images/homerdead.gif">');
+                $('.game-display').append('<img class="gif" src="images/homerdead3.png">');
                 $('.game-buttons').remove();
                 $('.game').append('<div><button class="btn-lg" id="restart">Play Again</button></div>');
             }
@@ -126,7 +127,7 @@ function makeGame(){
             }
             if (bart.age > 3) {
                 $('.gif').remove()
-                $('.game-display').append('<img class="gif" src="images/homerdead.gif">');
+                $('.game-display').append('<img class="gif" src="images/homerdead3.png">');
                 $('.game-buttons').remove();
                 $('.game').append('<div><button class="btn-lg" id="restart">Play Again</button></div>');
             }
@@ -141,7 +142,7 @@ function makeGame(){
             }
             if (bart.age > 3) {
                 $('.gif').remove()
-                $('.game-display').append('<img class="gif" src="images/homerdead.gif">');
+                $('.game-display').append('<img class="gif" src="images/homerdead3.png">');
                 $('.game-buttons').remove();
                 $('.game').append('<div><button class="btn-lg" id="restart">Play Again</button></div>');
             }   
