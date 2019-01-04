@@ -69,14 +69,10 @@ class Pet {
     }
 }
 
-// 
 // allow user to enter name
 // const username = prompt('What is your Tamagotchi\'s name?');
 let username;
-// const bart = new Pet(username);
 let bart;
-
-
 
 function makeGame(){
     username = prompt('What is your Tamagotchi\'s name?');
@@ -167,13 +163,6 @@ function makeGame(){
             $('#age-level').text(`Age: ${bart.age}`);
         }
     }
-    // function evolve() {
-    //     if (bart.age > 1) {
-    //         alert('Bart is evolving!')
-    //         // $('.gif').remove();
-    //         // $('.game-display').append('<img class="gif" src="images/bartman.gif">');
-    //     }
-    // }
 }
 // Start game when the button is clicked
 $('.start-button').click(makeGame);
@@ -191,11 +180,6 @@ $('.game').on('click', '#rest', function(){
 $('.game').on('click', '#restart', function(){
     location.reload();
 })
-// 1. Not let the numbers go negative - DONE
-// 2. Have a game over message screen and give the option to restart- DONE
-// 3. Add progress bars to the levels 
-// 4. Move Bart around on Play - DONE
-// Bonus: morph after age 5
 
 
 
