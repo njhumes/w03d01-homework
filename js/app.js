@@ -20,10 +20,10 @@ class Pet {
         if(this.age < 3){
             $('.game-display').append('<img class="gif" src="https://i.pinimg.com/originals/b5/49/c5/b549c552687942777915f92519d5054c.gif">')
         } else{
-            $('.game-display').append('<img class="gif" src="images/donut3.png">')
+            $('.game-display').append('<img class="gif" src="images/homerfeed.png">')
             // $('.gif').fadeOut('slow')
             $('.gif').velocity('transition.fadeOut', {
-                duration: 2000,
+                duration: 3000,
             })
         }
     }   
@@ -37,7 +37,7 @@ class Pet {
         if(this.age < 3){
             $('.game-display').append('<img class="gif" src="https://i.gifer.com/origin/7d/7d6dd7aee61f0eae8caa330e54226a67_w200.gif">')
         } else {
-            $('.game-display').append('<img class="gif" src="images/bartman.gif">')
+            $('.game-display').append('<img class="gif" src="images/homerplay.gif">')
         }
         $('.gif').velocity({
             translateX: 50,
@@ -62,7 +62,7 @@ class Pet {
         if(this.age < 3) {
             $('.game-display').append('<img class="gif" src="https://i.pinimg.com/originals/20/7c/c5/207cc5f45d654c2b1f655b0bf1820bea.gif">')
         } else {
-            $('.game-display').append('<img class="gif" src="images/bartmanplay.png">')
+            $('.game-display').append('<img class="gif" src="images/homersleep.gif">')
         }
         
     }
@@ -102,28 +102,49 @@ function makeGame(){
     function gameOver() {
         if (bart.hunger > 9) {
             clearInterval(timeRunning);
-            $('.gif').remove()
-            $('.game-display').append('<img class="gif" src="images/dead.png">');
-            $('.game-buttons').remove();
-            $('.game').append('<div><button class="btn-lg" id="restart">Play Again</button></div>');
+            if(bart.age < 3){
+                $('.gif').remove()
+                $('.game-display').append('<img class="gif" src="images/dead.png">');
+                $('.game-buttons').remove();
+                $('.game').append('<div><button class="btn-lg" id="restart">Play Again</button></div>');
+            }
+            if(bart.age > 3){
+                $('.gif').remove()
+                $('.game-display').append('<img class="gif" src="images/homerdead.gif">');
+                $('.game-buttons').remove();
+                $('.game').append('<div><button class="btn-lg" id="restart">Play Again</button></div>');
+            }
 
         }
         if (bart.boredom > 9) {
             clearInterval(timeRunning);
-            $('.gif').remove()
-            $('.game-display').append('<img class="gif" src="images/dead.png">');
-            $('.game-buttons').remove();
-            $('.game').append('<div><button class="btn-lg" id="restart">Play Again</button></div>');
+            if (bart.age < 3) {
+                $('.gif').remove()
+                $('.game-display').append('<img class="gif" src="images/dead.png">');
+                $('.game-buttons').remove();
+                $('.game').append('<div><button class="btn-lg" id="restart">Play Again</button></div>');
+            }
+            if (bart.age > 3) {
+                $('.gif').remove()
+                $('.game-display').append('<img class="gif" src="images/homerdead.gif">');
+                $('.game-buttons').remove();
+                $('.game').append('<div><button class="btn-lg" id="restart">Play Again</button></div>');
+            }
         }
         if (bart.sleepiness > 9) {
             clearInterval(timeRunning);
-            $('.gif').remove()
-            $('.game-display').append('<img class="gif" src="images/dead.png">');
-            // $('.game-buttons').remove();
-            $('#feed').remove();
-            $('#play').remove();
-            $('#rest').remove();
-            $('.game').prepend('<div><button class="btn-lg" id="restart">Play Again</button></div>');
+            if (bart.age < 3) {
+                $('.gif').remove()
+                $('.game-display').append('<img class="gif" src="images/dead.png">');
+                $('.game-buttons').remove();
+                $('.game').append('<div><button class="btn-lg" id="restart">Play Again</button></div>');
+            }
+            if (bart.age > 3) {
+                $('.gif').remove()
+                $('.game-display').append('<img class="gif" src="images/homerdead.gif">');
+                $('.game-buttons').remove();
+                $('.game').append('<div><button class="btn-lg" id="restart">Play Again</button></div>');
+            }   
         }
     }
 
